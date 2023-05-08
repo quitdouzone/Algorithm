@@ -20,6 +20,7 @@ def solution(H, W, N, M):
         for j in range(0, W, N+1):
             full_seat_cnt += 1
             print(i, j, full_seat_cnt)
+
     answer = full_seat_cnt
     return answer
 
