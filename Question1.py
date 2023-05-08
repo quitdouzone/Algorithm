@@ -21,7 +21,6 @@ def solution(H, W, N, M):
             full_seat_cnt += 1
             print(i, j, full_seat_cnt)
     answer = full_seat_cnt
-
     return answer
 
 def submit_code(data:str):
