@@ -40,7 +40,25 @@ def submit_code(data:str): #호율성 오류 정답확인
     answer = full_seat_cnt
     return answer
 
+def answer():
+    # 이번 문제 오류원인 구현이 아닌 단순 수치계산으로 접근하여함
+    # 단순하게 접근하면 더 쉽게 풀릴 문제 답을 찾아가는 방식의 다각화 필요
+    # 해당 문제 접근 방식
+            # 전체 5칸, 띄어앉아야 하는 길이가 4일 때(5/5=1) 딱 1명이 들어오며,
+            # 띄어앉아야 하는 길이가 3으로 줄어들 때(5/4=1.25) 1명이 추가되며,
+            # 띄어앉아야 하는 길이가 2로 줄어들 때(5/3=1.67) 인원이 변하지 않으며,
+            # 띄어앉아야 하는 길이가 1로 줄어들 때(5/2=2/5) 1명이 더 추가되는 규칙이 발견된다
+    import math
+    H, W, N, M = list(map(int, input().split(' '))) # map 함수를 활용한 리스트 언팩킹 방식 활용하여 코드 간결하게 표현
+    print(H, W, N, M)
+    max_row = math.ceil(W/(M+1))
+    max_col = math.ceil(H/(N+1))
+    print(max_row, max_col)
+    answer = max_row * max_col
+    return answer
+
 
 if __name__ == '__main__':
-    answer = submit_code('5 4 1 1')
+    #answer = submit_code('5 4 1 1')
+    answer = answer()
     print(answer)
