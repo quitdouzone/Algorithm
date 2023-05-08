@@ -24,7 +24,7 @@ def solution(H, W, N, M):
     answer = full_seat_cnt
     return answer
 
-def submit_code(data:str):
+def submit_code(data:str): #호율성 오류 정답확인
     input_data_list = input().split(' ')
     #input_data_list = data.split(' ')
     full_seat_cnt = 0
