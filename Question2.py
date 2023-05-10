@@ -16,11 +16,13 @@ def solution():
             print('')
         else:
             # 삼각형 구분
-            max_tri_var = max([a, b, c])
-            list_1 = [a, b, c]
-            list_1.remove(max_tri_var)
+            # max_tri_var = max([a, b, c])
+            # list_1 = [a, b, c]
+            # list_1.remove(max_tri_var)
+            sorted_list = sorted([a, b, c])
+            print(sorted_list)
             #print(list_1)
-            if max_tri_var >= sum(list_1):
+            if sorted_list[2] >= sum(sorted_list[:-1]):
                 print('Invalid')
             elif a == b:
                 if a == c:
