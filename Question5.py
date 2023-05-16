@@ -10,17 +10,37 @@
 # empty: S를 공집합으로 바꾼다.
 
 
-def solution():
+def solution(): # Key Error?
     result = set()
-    while True:
-        ordr, value = input().split(' ')
+    last_cnt = int(input())
+    cnt = 0
+    while cnt < last_cnt:
+        ordr_value_list = input().split(' ')
+        ordr = ordr_value_list[0].lower()
+        if ordr != 'all' and ordr != 'empty':
+            value = int(ordr_value_list[1])
 
         if ordr == 'add':
+            result.add(value)
+
         elif ordr == 'remove':
+            result.remove(value)
+
         elif ordr == 'check':
+            if value in result:
+                print(1)
+            else:
+                print(0)
         elif ordr == 'toggle':
+            if value in result:
+                result.pop(value)
+            else:
+                result.add(value)
         elif ordr == 'all':
+            result = set([i for i in range(1, 21)])
         else:
+            result = {}
+        cnt+=1
 
 
 
